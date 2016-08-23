@@ -1,2 +1,2 @@
 # node-gulp-front-end-demo
-Front-end developing with node.js gulp framework
+Front-end developing with node.js gulp,sass and other frameworks....
