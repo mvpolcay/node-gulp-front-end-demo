@@ -1,0 +1,170 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
+html, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, ul, li,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+body {
+  font-family: 'Roboto',sans-serif;
+  background-color: #48627c; }
+
+.npad {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.nav-right {
+  float: right; }
+
+.special-1 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 5.3333333% !important; }
+
+.special-5 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 44.666667% !important; }
+
+.nav {
+  height: 60px;
+  margin-top: 49px; }
+  .nav .nav-content {
+    display: block;
+    background-color: #FFF;
+    -webkit-border-radius: 60px;
+    -khtml-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+    border-radius: 60px; }
+    .nav .nav-content .toggleButton {
+      -webkit-border-radius: 60px;
+      -khtml-border-radius: 60px;
+      -moz-border-radius: 60px;
+      -ms-border-radius: 60px;
+      -o-border-radius: 60px;
+      border-radius: 60px;
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-color: #56ccc8;
+      color: #ffffff;
+      text-align: center;
+      -webkit-transition: 600ms;
+      -khtml-transition: 600ms;
+      -moz-transition: 600ms;
+      -ms-transition: 600ms;
+      -o-transition: 600ms;
+      transition: 600ms; }
+      .nav .nav-content .toggleButton:hover {
+        background: rgba(0, 44, 44, 0.9); }
+      .nav .nav-content .toggleButton .icon-toggle {
+        line-height: 60px; }
+    .nav .nav-content .nav-list {
+      margin-bottom: 0;
+      height: 60px; }
+      .nav .nav-content .nav-list .nav-list-item {
+        width: 80px;
+        height: 60px;
+        display: inline-block;
+        line-height: 55px;
+        text-align: center;
+        -webkit-border-radius: 60px;
+        -khtml-border-radius: 60px;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+        border-radius: 60px;
+        -webkit-transition: 600ms;
+        -khtml-transition: 600ms;
+        -moz-transition: 600ms;
+        -ms-transition: 600ms;
+        -o-transition: 600ms;
+        transition: 600ms; }
+        .nav .nav-content .nav-list .nav-list-item a {
+          display: inline-block;
+          -webkit-transition: 600ms;
+          -khtml-transition: 600ms;
+          -moz-transition: 600ms;
+          -ms-transition: 600ms;
+          -o-transition: 600ms;
+          transition: 600ms;
+          color: #000000;
+          font-size: 15px;
+          font-weight: 600; }
+          .nav .nav-content .nav-list .nav-list-item a:hover {
+            text-decoration: none; }
+        .nav .nav-content .nav-list .nav-list-item:hover {
+          color: #56ccc8;
+          cursor: pointer;
+          background: rgba(0, 44, 44, 0.9); }
+          .nav .nav-content .nav-list .nav-list-item:hover a {
+            color: #56ccc8; }
+      .nav .nav-content .nav-list .nav-social {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        -webkit-border-radius: 60px;
+        -khtml-border-radius: 60px;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+        border-radius: 60px;
+        border: 1px solid #b2b9bd; }
+        .nav .nav-content .nav-list .nav-social .nav-social-icons {
+          color: #b2b9bd; }

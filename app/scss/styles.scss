@@ -1,0 +1,158 @@
+
+//----------------İmports-----------------//
+
+@import 'css3-mixins.scss';
+
+
+//@include opacity();
+//@include border-radius(3px); 
+//@include transition(color, .5s, ease-in);
+//---------------------------------------//
+
+
+//-------------ResetCSS--------------//
+
+html, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u,ul,li,
+dl, dt, dd, 
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a{
+  text-decoration: none;  
+}
+
+//---------------------------------------//
+
+
+//--------------Colors Palet----------------//
+
+$basecolor:#48627c;
+$toggleColor:#56ccc8;
+$white:#ffffff;
+$black:#000000;
+$smooth:#b2b9bd;
+//------------------------------------------//
+
+
+body{
+  font-family: 'Roboto',sans-serif; 
+  background-color:$basecolor;
+}
+
+.npad{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.nav-right{float: right;}
+
+.special-1{padding-left: 0 !important;padding-right: 0 !important;width: 5.3333333% !important;}
+.special-5{padding-left: 0 !important;padding-right: 0 !important;width: 44.666667% !important;}
+
+.nav{
+  height: 60px;
+  margin-top: 49px;
+    .nav-content{
+      display: block;
+      background-color: #FFF; 
+      @include border-radius(60px);
+      .toggleButton{
+      @include border-radius(60px);
+      display: block; 
+      width: 60px;
+      height: 60px;
+      background-color:$toggleColor; 
+      color:$white;
+      text-align: center;
+      @include transition(600ms);
+      &:hover{
+        @include rbdsg(bg,0,44,44,0.9);
+      }
+      .icon-toggle{
+        line-height: 60px; 
+      }
+    }
+    .nav-list{
+      //background-color: $white;
+      margin-bottom: 0; 
+      height: 60px;
+      .nav-list-item{
+        width: 80px; 
+        height: 60px; 
+        display: inline-block;
+        line-height: 55px;
+        text-align: center;
+        @include border-radius(60px);
+        a{
+          display: inline-block;
+          @include transition(600ms);
+          color: $black;
+          font-size: 15px;
+          font-weight: 600;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+        @include transition(600ms);
+        &:hover{
+          color:$toggleColor;
+          cursor:pointer;
+          @include rbdsg(bg,0,44,44,0.9);
+          a{
+            color:$toggleColor;
+          }
+        }
+      }
+      .nav-social{
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        @include border-radius(60px);
+        border:1px solid $smooth;
+        .nav-social-icons{
+          color: $smooth; 
+        }
+      }
+    }
+  }
+}
