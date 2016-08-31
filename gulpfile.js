@@ -9,14 +9,13 @@ var gulp=require('gulp'),
     cache=require('gulp-cache'),
     del=require('del'),
     runSequence=require('run-sequence');
+
 /*-----------TASK LİST-----------------
 * 'sass' for sass
 * 'watch' for test 
 * 'browserSync' for test with browser easy way
 * 'useref' for optimizing all '.js' & '.css' files
 */
-
-
 //Development Tasks
 //---------------------
 
@@ -36,6 +35,7 @@ gulp.task('sass',function(){
       stream:true
     }))
 });
+
 //watch
 gulp.task('watch',['browserSync','sass'],function(){
   gulp.watch('app/scss/**/*.+(scss|sass)',['sass']);
@@ -71,7 +71,7 @@ gulp.task('clean', function() {
   return del.sync('dist').then(function(cb) {
     return cache.clearAll(cb);
   });
-})
+});
 
 gulp.task('clean:dist',function(){
   return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
@@ -80,8 +80,6 @@ gulp.task('clean:dist',function(){
 gulp.task('cache:clear',function(cb){
   return cache.clearAll(cb)
 });
-
-
 
 //Build Sequence
 //---------------

@@ -56,7 +56,7 @@ table {
   border-spacing: 0;
 }
 a{
-  text-decoration: none;  
+  text-decoration: none;
 }
 
 //---------------------------------------//
@@ -64,95 +64,408 @@ a{
 
 //--------------Colors Palet----------------//
 
-$basecolor:#48627c;
+$baseColor:#48627c;
 $toggleColor:#56ccc8;
 $white:#ffffff;
 $black:#000000;
 $smooth:#b2b9bd;
+$fontColor:#475055;
+$fontColorHover:#61cfcc;
+$iconColor:#b7bdc1;
+$socialBorder:#dde2e4;
+$subColor:#152840;
+$subColorHover:#263a54;
+$socialHover:#4fc6f8;
+$fWC:#4d6baa;
+$gWC:#ea6060;
+$lWC:#238cc8;
 //------------------------------------------//
 
 
 body{
   font-family: 'Roboto',sans-serif; 
-  background-color:$basecolor;
+  background-color:$baseColor;
+  color: $white;
 }
 
-.npad{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.nav-right{float: right;}
-
-.special-1{padding-left: 0 !important;padding-right: 0 !important;width: 5.3333333% !important;}
-.special-5{padding-left: 0 !important;padding-right: 0 !important;width: 44.666667% !important;}
-
-.nav{
+/******NAVBAR*******/
+.navigation{
+  width: 100%; 
+  margin-top: 60px;
   height: 60px;
-  margin-top: 49px;
-    .nav-content{
-      display: block;
-      background-color: #FFF; 
-      @include border-radius(60px);
-      .toggleButton{
-      @include border-radius(60px);
-      display: block; 
-      width: 60px;
-      height: 60px;
-      background-color:$toggleColor; 
-      color:$white;
+  background: $white;
+  .navbar-scroll{
+    float: left;
+    color: $white; 
+    text-decoration: none;
+    background:$toggleColor;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    text-align: center; 
+    > span{
+      line-height: 60px;
+      font-size: 20px; 
+    }
+    @include transition(450ms);
+    &:hover{
+      @include opacity(0.6);
+      cursor:pointer;
+    }
+  }
+  .navbar{
+    display: inline-block;
+    border:none;
+    margin-bottom: 15px; 
+    .navbar-item{
+      display: inline-block;
       text-align: center;
-      @include transition(600ms);
-      &:hover{
-        @include rbdsg(bg,0,44,44,0.9);
-      }
-      .icon-toggle{
-        line-height: 60px; 
+      line-height: 60px;  
+      >a{
+        height: 60px;
+        display: block;
+        font-size: 16px; 
+        font-weight: 500; 
+        text-decoration: none;
+        @include transition(450ms);
       }
     }
-    .nav-list{
-      //background-color: $white;
-      margin-bottom: 0; 
-      height: 60px;
-      .nav-list-item{
-        width: 80px; 
-        height: 60px; 
-        display: inline-block;
-        line-height: 55px;
-        text-align: center;
-        @include border-radius(60px);
-        a{
-          display: inline-block;
-          @include transition(600ms);
-          color: $black;
-          font-size: 15px;
-          font-weight: 600;
-          &:hover{
-            text-decoration: none;
-          }
-        }
-        @include transition(600ms);
+  }
+  .nav-left{
+    width: 69%; 
+    float: left;
+    margin-left: 20px; 
+    .navbar-item{
+      >a{
+        width: 80px;
+        color: $fontColor;
         &:hover{
-          color:$toggleColor;
           cursor:pointer;
-          @include rbdsg(bg,0,44,44,0.9);
-          a{
-            color:$toggleColor;
+          color: $fontColorHover;
+        }
+      }
+    }
+  }
+  .nav-right{
+    float: right;
+    .navbar-item{
+      >a{
+        width: 50px; 
+        color:$iconColor;
+        &:hover{
+          color:#000;
+          cursor:pointer;
+        }
+      }
+      &:nth-child(2),&:last-child{
+        border-left:1px solid $socialBorder;
+      }
+    }
+  }
+}
+/******MENU*******/
+.menu-list{
+  float: left;
+  display: inline-block;
+  background: $white;
+  width: 20%;
+  margin-bottom: 0;
+  position: relative;
+  .menu-list-item{
+    display: block;
+    line-height: 60px; 
+    &:not(:last-child){
+      border-bottom:1px solid $iconColor;
+    }
+    >a{ 
+      color:$fontColor;
+      height: 60px;
+      display: block;
+      font-size: 16px; 
+      >span{
+        width: 60px;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        color:$iconColor;
+      }
+      &:hover{
+        text-decoration: none;
+        cursor:pointer;          
+        color:$white;
+        background:$fontColorHover;
+        >span{
+          color:$white;
+        }
+      }
+      @include transition(450ms);
+    }
+    &:hover{
+      cursor:pointer;
+      .submenu{
+        @include transition(450ms);
+        display: inline-block;
+        .submenu-list{
+          @include transition(450ms);
+          display: block;
+        }
+      }
+      >a{
+        background:$fontColorHover;
+        color:$white;
+        >span{
+          color:$white;
+        }
+      }
+    }
+  }
+}
+/******SUBMENU*******/
+.submenu{
+  display: none;
+  position: absolute;
+  left: 100%;  
+  width: 100%;
+  top: 0;
+  .submenu-list{
+    padding:30px 30px 30px 30px;
+    display: none;
+    background:$subColor;
+    &:not(:last-child){
+      border-bottom:1px solid $fontColor;
+    }
+    .submenu-title{
+      color: $toggleColor;
+      text-decoration: none;
+      line-height: 18px;
+      display: block; 
+      font-size: 18px;
+      margin-bottom: 10px; 
+      >span{
+        float: right;
+        font-size: 22px;
+        color:$toggleColor;
+      }
+    }
+    .submenu-list-item{
+      line-height: 30px; 
+      >a{
+        display: block;
+        color: $white; 
+        font-size: 15px; 
+        font-weight: normal; 
+        text-decoration: none; 
+      } 
+    }
+    &:hover{
+      cursor:pointer;
+      background:$subColorHover;
+      .submenu-title:hover{
+        cursor:pointer;
+        color:$baseColor;
+        >span{
+          color:$baseColor;
+        }
+      }
+      .submenu-list-item:hover{
+        cursor:pointer;
+        >a{
+          cursor:pointer;
+          color:$toggleColor;
+        }
+      }
+    }
+  }
+}
+/********CONTACT****/
+.contact{
+  background:$iconColor;
+  color:$white;
+  padding: 10px 10px 10px 30px;
+  .contact-item{
+    padding-bottom: 30px; 
+    padding-top: 30px; 
+    >span{
+      width: 40px;
+      height: 40px; 
+      display: inline-block;
+      font-size: 30px; 
+    }
+    >p{
+      display: inline-block;
+      position: absolute;
+      margin: 0; 
+      color:$white;
+    }
+  }
+}
+/******SOCIAL-MENU*******/
+.social{
+  width: 20%;
+  display: inline-block;
+  margin-bottom: 0; 
+  float: left;
+  margin-left: 15px;
+  background:$white; 
+  .social-list{
+    padding: 15px 5px 5px 25px;
+    .social-list-item{
+      margin-bottom: 15px; 
+      >a{
+        display: block;
+        font-size: 16px;
+        color: $baseColor; 
+        text-decoration: none; 
+        @include transition(450ms);
+        >span{
+          margin-right: 30px;  
+          width: 40px;
+          height: 40px; 
+          @include border-radius(50px);
+          color:$white;
+          text-align: center;
+          line-height: 40px; 
+          background-color: $iconColor; 
+          @include transition(450ms);
+        }
+        &:hover{
+          color:$socialHover;
+          >span{
+            background-color: $socialHover; 
           }
         }
       }
-      .nav-social{
+    }
+  }
+}
+/****SOCIAL-WIDGET******/
+.widgets{
+  margin-left: 15px;
+  display: inline-block;
+  width: 20%; 
+  float: left;
+  .social-widget{
+
+    padding: 20px 15px 20px 25px;
+    display: block;
+    color:$white;
+    margin-bottom: 15px; 
+    >:first-child{
+      font-size: 40px; 
+      display: block;
+      margin-bottom: 45px; 
+    }
+    font-size: 14px; 
+    >:nth-child(2){
+      font-weight: bold; 
+    }
+    >a{
+      float: right;
+      color: $white;
+      text-decoration: none; 
+      display: table;
+      >span{
+        font-size: 18px;
+        font-weight: 100;  
+        display:table-cell;
+        vertical-align:middle;
+        padding-left: 10px; 
+      } 
+    }
+    &:hover{
+      @include opacity(.8);
+    }
+    @include transition(450ms);
+  }
+  .social-widget-facebook{
+    background-color: $fWC; 
+    >a{
+      >span{
+        font-size: 12px;
+        font-weight: 100; 
         display: inline-block;
-        position: relative;
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
-        @include border-radius(60px);
-        border:1px solid $smooth;
-        .nav-social-icons{
-          color: $smooth; 
-        }
+        padding-left: 5px; 
       }
+    }
+  }
+  .social-widget-twitter{
+    background-color: $socialHover; 
+    >a{
+      >span{
+        font-size: 22px; 
+      }
+    }
+  }
+}
+/****SIGN-NEWSLETTER**/
+.widgets-lg{
+  width: 35%;
+  display: inline-block;
+  margin-left: 13px;
+  text-align: center;
+  float: left;
+  .widget-lg{
+    background-color: $white;
+    padding: 20px;
+    margin-bottom: 15px; 
+  }
+  .widget-lg-sign{
+    text-align: center; 
+    >h3{
+      padding-bottom: 10px; 
+    }
+    >a{
+
+      margin-top: 10px; 
+      color: $white;
+      margin-left: 10px; 
+      margin-right: 10px; 
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      @include border-radius(30px);
+      @include transition(450ms);
+      >span{
+        line-height: 30px;
+        font-size: 20px; 
+      }
+      &:hover{
+        @include opacity(.8);
+      }
+    }
+    >a.facebook{
+      background-color: $fWC; 
+    }
+    >a.twitter{
+      background-color: $socialHover; 
+    }
+    >a.google-plus{
+      background-color: $gWC;
+      >span{
+        font-size: 15px;  
+      }
+    }
+    >a.linkedin{
+      background-color: $lWC;
+      >span{
+        font-size: 15px; 
+      } 
+    }
+  }
+  .widget-lg-newsletter{
+    >p{
+      margin-top: 10px; 
+      font-size: 13px; 
+    }
+    >.newsletter-form{
+      width: 100%;
+      >input{
+        width: 70%; 
+        height: 35px;
+        outline: 0 none; 
+        border:1px solid $socialBorder;
+        padding: 0 10px 0 20px;  
+      } 
     }
   }
 }
